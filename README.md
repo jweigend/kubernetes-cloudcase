@@ -1,17 +1,17 @@
-# Cloudkoffer v2 mit OpenShift
-Repository für die OpenShift Origin Cloud auf dem Cloud Koffer V2 (5x NUCs)
+# Cloudcase running OpenShift Origin
+Setup instructions and tools for a OpenShift Origin cluster on Bare Metal Nuc Mini PCs.
 
 ## CentOS 7 Installation
-Auf dem Koffer werden alle Knoten manuell installiert (kein Netzwerkboot o.ä.).
+For this case we used a normal CentOS7 unautomated installation. 
 
 ![Koffer|2x](KofferV2.jpg)
 
-Betriebssystem Installation (CentOS 7 Full Software with UI ==> Workstation)
+OS Installation (CentOS 7 Full Software with UI ==> Workstation)
 
 | Setting       | Value                            | 
 | ------------- | ---------------------------------|  
 | Hostname      |  node0 - node4                   |
-| Domain        | .cloud                           |
+| Domain        |                                  |
 | IP-Addressen  | 192.168.1.100 - 192.168.1.104    |
 | Subnetz       | 255.255.255.0                    |
 | Gateway       | 192.168.1.1                      |
@@ -19,23 +19,19 @@ Betriebssystem Installation (CentOS 7 Full Software with UI ==> Workstation)
 | ---                                              |
 | User          | cloud                            |
 | Group         | wheel                            |
-| Password      | 12qwaszx                         |
+| Password      | xxxxx                            |
 | ---                                              |
 | User          | root                             |
-| Password      | 12qwaszx                         |
+| Password      | xxxxx                            |
 
+It is important that DNS is fully functional.
 
-Entscheidend für die folgende Installation ist, dass DNS richtig konfiguriert ist.
-Es reicht nicht aus, dass alle Hostnamen in /etc/hosts eingetragen sind. 
-Ohne einen funktionierenden DNS Server finden sich nur die Rechner, nicht aber
-die Pods/Container innerhalb. 
-
-Die Dokumentation für die OpenShift Origin Advanced Installation (mehrere Nodes) liegt hier:
+We use the OpenShift Ansible advanced installation method which is documented here:
 https://docs.openshift.org/latest/install_config/install/advanced_install.html
 
 
-## OpenShift Origin 3.7 Vorbereitung vor der Installation
-#### Installiere Basis Software auf allen Knoten
+## OpenShift Origin 3.7 - Preperations
+#### Install neccessary Software Packages
 ```
 # yum install wget git net-tools bind-utils iptables-services bridge-utils \
               bash-completion kexec-tools sos psacct
@@ -43,7 +39,7 @@ https://docs.openshift.org/latest/install_config/install/advanced_install.html
 # systemctl reboot
 ```
 
-#### Generiere und kopiere SSH-Key für passwortlosen SSH Zugang
+#### You have to generate an SSH Key for passwordless SSH access
 Bei der Schlüsselgenerierung muss die Passphrase leer bleiben
 ```
 # ssh-keygen
@@ -53,16 +49,16 @@ Bei der Schlüsselgenerierung muss die Passphrase leer bleiben
     done `
 ```
 
-#### Installiere parallel SSH (PSSH)
+#### Use pssh to easy cluster operations (PSSH)
 ```
 $ sudo yum install epel-release
 $ sudo yum install pssh
 ```
 
-Mit dem pssh Kommando können die folgenden Kommandos auf allen Maschinen ausgeführt werden.
-Ein kleiner Test (Die Datei nodes enthält alle Hostnamen)
+With the pssh command, you can run a single command against all machines in the cluster.
+A simple test - The file cluster-nodes contains all filenames
 ```
-[root@node0 setup]# pssh -h nodes uptime
+[root@node0 setup]# pssh -h cluster-nodes uptime
 [1] 10:14:59 [SUCCESS] node0
 [2] 10:14:59 [SUCCESS] node3
 [3] 10:14:59 [SUCCESS] node1
