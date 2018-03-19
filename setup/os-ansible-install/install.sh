@@ -2,6 +2,11 @@
 echo Ansible Playbook installation of a BYI cluster
 echo Make sure you got the correct Ansible version. 
 
+echo - Ansible Version ------------------------------ 
 ansible --version
+echo - OpenShift Ansible Branch ---------------------
 
-ansible-playbook -e openshift_disable_check=docker_storage -e openshift_disable_check=package_version -i ./inventory ../../../openshift-ansible/playbooks/byo/config.yml 
+( cd ../../../openshift-ansible; git describe )
+
+ansible-playbook -e openshift_disable_check=docker_storage,package_version \
+                 -i ./inventory ../../../openshift-ansible/playbooks/byo/config.yml 
