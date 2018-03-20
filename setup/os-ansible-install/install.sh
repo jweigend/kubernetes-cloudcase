@@ -9,4 +9,4 @@ echo - OpenShift Ansible Branch ---------------------
 ( cd ../../../openshift-ansible; git describe )
 
 ansible-playbook -e openshift_disable_check=docker_storage,package_version \
-                 -i ./inventory ../../../openshift-ansible/playbooks/byo/config.yml 
+                 -i ./inventory ../../../openshift-ansible/playbooks/byo/config.yml --flush-cache
