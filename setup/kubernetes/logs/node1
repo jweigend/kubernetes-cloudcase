@@ -1,64 +1,134 @@
-[preflight] Running pre-flight checks.
-[reset] Stopping the kubelet service.
-[reset] Unmounting mounted directories in "/var/lib/kubelet"
-[reset] Removing kubernetes-managed containers.
-[reset] No etcd manifest found in "/etc/kubernetes/manifests/etcd.yaml". Assuming external etcd.
-[reset] Deleting contents of stateful directories: [/var/lib/kubelet /etc/cni/net.d /var/lib/dockershim /var/run/kubernetes]
-[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
-[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
 Geladene Plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.netcologne.de
+ * extras: mirror.fra10.de.leaseweb.net
+ * updates: mirror.fra10.de.leaseweb.net
+No packages marked for update
+Geladene Plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.netcologne.de
+ * extras: mirror.fra10.de.leaseweb.net
+ * updates: mirror.fra10.de.leaseweb.net
 Abhängigkeiten werden aufgelöst
 --> Transaktionsprüfung wird ausgeführt
----> Paket docker.x86_64 2:1.13.1-53.git774336d.el7.centos markiert, um gelöscht zu werden
----> Paket kubeadm.x86_64 0:1.10.0-0 markiert, um gelöscht zu werden
----> Paket kubectl.x86_64 0:1.10.0-0 markiert, um gelöscht zu werden
----> Paket kubelet.x86_64 0:1.10.0-0 markiert, um gelöscht zu werden
---> Abhängigkeit kubelet wird für Paket kubernetes-cni-0.6.0-0.x86_64 verarbeitet
---> Transaktionsprüfung wird ausgeführt
----> Paket kubernetes-cni.x86_64 0:0.6.0-0 markiert, um gelöscht zu werden
+---> Paket docker.x86_64 2:1.13.1-53.git774336d.el7.centos markiert, um installiert zu werden
 --> Abhängigkeitsauflösung beendet
 
 Abhängigkeiten aufgelöst
 
 ================================================================================
- Package         Arch    Version                             Paketquelle  Größe
+ Package    Arch       Version                                 Paketquelle
+                                                                          Größe
 ================================================================================
-Entfernen:
- docker          x86_64  2:1.13.1-53.git774336d.el7.centos   @extras       56 M
- kubeadm         x86_64  1.10.0-0                            @kubernetes  103 M
- kubectl         x86_64  1.10.0-0                            @kubernetes   38 M
- kubelet         x86_64  1.10.0-0                            @kubernetes  100 M
-Entfernt für Abhängigkeiten:
- kubernetes-cni  x86_64  0.6.0-0                             @kubernetes   31 M
+Installieren:
+ docker     x86_64     2:1.13.1-53.git774336d.el7.centos       extras      16 M
 
 Transaktionsübersicht
 ================================================================================
-Entfernen  4 Pakete (+1 Abhängiges Paket)
+Installieren  1 Paket
 
-Installationsgröße: 328 M
+Gesamte Downloadgröße: 16 M
+Installationsgröße: 56 M
 Downloading packages:
 Running transaction check
 Running transaction test
 Transaction test succeeded
 Running transaction
-  Löschen          : kubeadm-1.10.0-0.x86_64                                1/5 
-  Löschen          : kubelet-1.10.0-0.x86_64                                2/5 
-  Löschen          : kubernetes-cni-0.6.0-0.x86_64                          3/5 
-  Löschen          : kubectl-1.10.0-0.x86_64                                4/5 
-  Löschen          : 2:docker-1.13.1-53.git774336d.el7.centos.x86_64        5/5 
-Warnung: /etc/sysconfig/docker-storage als /etc/sysconfig/docker-storage.rpmsave gesichert
-  Überprüfung läuft: kubeadm-1.10.0-0.x86_64                                1/5 
-  Überprüfung läuft: 2:docker-1.13.1-53.git774336d.el7.centos.x86_64        2/5 
-  Überprüfung läuft: kubernetes-cni-0.6.0-0.x86_64                          3/5 
-  Überprüfung läuft: kubectl-1.10.0-0.x86_64                                4/5 
-  Überprüfung läuft: kubelet-1.10.0-0.x86_64                                5/5 
+  Installieren     : 2:docker-1.13.1-53.git774336d.el7.centos.x86_64        1/1 
+  Überprüfung läuft: 2:docker-1.13.1-53.git774336d.el7.centos.x86_64        1/1 
 
-Entfernt:
-  docker.x86_64 2:1.13.1-53.git774336d.el7.centos   kubeadm.x86_64 0:1.10.0-0  
-  kubectl.x86_64 0:1.10.0-0                         kubelet.x86_64 0:1.10.0-0  
+Installiert:
+  docker.x86_64 2:1.13.1-53.git774336d.el7.centos                               
 
-Abhängigkeit entfernt:
+Komplett!
+Geladene Plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.23media.de
+ * extras: mirror.23media.de
+ * updates: mirror.ratiokontakt.de
+Abhängigkeiten werden aufgelöst
+--> Transaktionsprüfung wird ausgeführt
+---> Paket kubeadm.x86_64 0:1.10.0-0 markiert, um installiert zu werden
+--> Abhängigkeit kubernetes-cni wird für Paket kubeadm-1.10.0-0.x86_64 verarbeitet
+---> Paket kubectl.x86_64 0:1.10.0-0 markiert, um installiert zu werden
+---> Paket kubelet.x86_64 0:1.10.0-0 markiert, um installiert zu werden
+--> Transaktionsprüfung wird ausgeführt
+---> Paket kubernetes-cni.x86_64 0:0.6.0-0 markiert, um installiert zu werden
+--> Abhängigkeitsauflösung beendet
+
+Abhängigkeiten aufgelöst
+
+================================================================================
+ Package               Arch          Version            Paketquelle       Größe
+================================================================================
+Installieren:
+ kubeadm               x86_64        1.10.0-0           kubernetes         17 M
+ kubectl               x86_64        1.10.0-0           kubernetes        7.6 M
+ kubelet               x86_64        1.10.0-0           kubernetes         17 M
+Als Abhängigkeiten installiert:
+ kubernetes-cni        x86_64        0.6.0-0            kubernetes        8.6 M
+
+Transaktionsübersicht
+================================================================================
+Installieren  3 Pakete (+1 Abhängiges Paket)
+
+Gesamte Downloadgröße: 50 M
+Installationsgröße: 272 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Gesamt                                             459 kB/s |  50 MB  01:52     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installieren     : kubelet-1.10.0-0.x86_64                                1/4 
+  Installieren     : kubernetes-cni-0.6.0-0.x86_64                          2/4 
+  Installieren     : kubectl-1.10.0-0.x86_64                                3/4 
+  Installieren     : kubeadm-1.10.0-0.x86_64                                4/4 
+  Überprüfung läuft: kubeadm-1.10.0-0.x86_64                                1/4 
+  Überprüfung läuft: kubernetes-cni-0.6.0-0.x86_64                          2/4 
+  Überprüfung läuft: kubectl-1.10.0-0.x86_64                                3/4 
+  Überprüfung läuft: kubelet-1.10.0-0.x86_64                                4/4 
+
+Installiert:
+  kubeadm.x86_64 0:1.10.0-0 kubectl.x86_64 0:1.10.0-0 kubelet.x86_64 0:1.10.0-0
+
+Abhängigkeit installiert:
   kubernetes-cni.x86_64 0:0.6.0-0                                               
 
 Komplett!
-node node1 completly cleaned.
+* Applying /usr/lib/sysctl.d/00-system.conf ...
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+* Applying /usr/lib/sysctl.d/10-default-yama-scope.conf ...
+kernel.yama.ptrace_scope = 0
+* Applying /usr/lib/sysctl.d/50-default.conf ...
+kernel.sysrq = 16
+kernel.core_uses_pid = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.default.promote_secondaries = 1
+net.ipv4.conf.all.promote_secondaries = 1
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+* Applying /usr/lib/sysctl.d/60-libvirtd.conf ...
+fs.aio-max-nr = 1048576
+* Applying /usr/lib/sysctl.d/99-docker.conf ...
+fs.may_detach_mounts = 1
+* Applying /etc/sysctl.d/99-openshift.conf ...
+net.ipv4.ip_forward = 1
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.d/k8s.conf ...
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+* Applying /etc/sysctl.conf ...
+success
+success
+success
+success
+success
+success
+success

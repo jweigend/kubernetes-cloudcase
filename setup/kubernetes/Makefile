@@ -3,12 +3,15 @@ help:
 	@echo "*** Cloudkoffer setup script for setup a bare metal k8s cluster with kubeadm ***"  
 	@echo " usage: make <target>"
 	@echo " valid targets are:"
+	@echo " - check           - tests if all nodes in the conf/cluster-nodes configuration file can be accessed."
 	@echo " - prepare         - installs docker, kubectl, kubeadm on all nodes listed in the cluster-nodes file." 
 	@echo " - prepare-node    - installs docker kubectl, kubeadm and do basic configuration."
 	@echo " - install-master  - install the master node."
 	@echo " - clean clean-up  - complete cluster and removes all docker, kubernetes and kubeadm components."
 	@echo " - clean-node      - clean-up a single node by removing all docker, kubernets and kubeadm components."
 	@echo "--------------------------------------------------------------------------------------------------------"
+check :
+	./sbin/check-cluster.sh
 
 clean-cluster :
 	./bin/clean-cluster.sh
@@ -28,5 +31,5 @@ install-master :
 	./bin/install-master.sh
 
 reboot :
-	./bin/reboot-cluster.sh
+	./sbin/reboot-cluster.sh
 

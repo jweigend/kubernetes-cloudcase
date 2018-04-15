@@ -1,7 +1,6 @@
 [init] Using Kubernetes version: v1.10.1
 [init] Using Authorization modes: [Node RBAC]
 [preflight] Running pre-flight checks.
-[preflight] Starting the kubelet service
 [certificates] Generated ca certificate and key.
 [certificates] Generated apiserver certificate and key.
 [certificates] apiserver serving cert is signed for DNS names [node0 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.1.100]
@@ -27,11 +26,11 @@
 [etcd] Wrote Static Pod manifest for a local etcd instance to "/etc/kubernetes/manifests/etcd.yaml"
 [init] Waiting for the kubelet to boot up the control plane as Static Pods from directory "/etc/kubernetes/manifests".
 [init] This might take a minute or longer if the control plane images have to be pulled.
-[apiclient] All control plane components are healthy after 19.001346 seconds
+[apiclient] All control plane components are healthy after 138.001423 seconds
 [uploadconfig] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
 [markmaster] Will mark node node0 as master by adding a label and a taint
 [markmaster] Master node0 tainted and labelled with key/value: node-role.kubernetes.io/master=""
-[bootstraptoken] Using token: vzfuwc.zgsj99zw3ijik50l
+[bootstraptoken] Using token: s4y10r.8tuixm3qc147uf7g
 [bootstraptoken] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
 [bootstraptoken] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
 [bootstraptoken] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
@@ -54,5 +53,5 @@ Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
 You can now join any number of machines by running the following on each node
 as root:
 
-  kubeadm join 192.168.1.100:6443 --token vzfuwc.zgsj99zw3ijik50l --discovery-token-ca-cert-hash sha256:9febb3f755ed83db2cb308e460066e721972b79e2c3ba292fb73184d3a66972e
+  kubeadm join 192.168.1.100:6443 --token s4y10r.8tuixm3qc147uf7g --discovery-token-ca-cert-hash sha256:2f3fd035ffa25239204927bea2d347baba5ab1ddfd5ddf5f2519b822a35632af
 
