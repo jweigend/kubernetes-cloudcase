@@ -1,0 +1,63 @@
+[preflight] Running pre-flight checks.
+[reset] Stopping the kubelet service.
+[reset] Unmounting mounted directories in "/var/lib/kubelet"
+[reset] Removing kubernetes-managed containers.
+[reset] Deleting contents of stateful directories: [/var/lib/kubelet /etc/cni/net.d /var/lib/dockershim /var/run/kubernetes /var/lib/etcd]
+[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
+[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+Geladene Plugins: fastestmirror, langpacks
+Abhängigkeiten werden aufgelöst
+--> Transaktionsprüfung wird ausgeführt
+---> Paket docker.x86_64 2:1.13.1-53.git774336d.el7.centos markiert, um gelöscht zu werden
+---> Paket kubeadm.x86_64 0:1.10.0-0 markiert, um gelöscht zu werden
+---> Paket kubectl.x86_64 0:1.10.0-0 markiert, um gelöscht zu werden
+---> Paket kubelet.x86_64 0:1.10.0-0 markiert, um gelöscht zu werden
+--> Abhängigkeit kubelet wird für Paket kubernetes-cni-0.6.0-0.x86_64 verarbeitet
+--> Transaktionsprüfung wird ausgeführt
+---> Paket kubernetes-cni.x86_64 0:0.6.0-0 markiert, um gelöscht zu werden
+--> Abhängigkeitsauflösung beendet
+
+Abhängigkeiten aufgelöst
+
+================================================================================
+ Package         Arch    Version                             Paketquelle  Größe
+================================================================================
+Entfernen:
+ docker          x86_64  2:1.13.1-53.git774336d.el7.centos   @extras       56 M
+ kubeadm         x86_64  1.10.0-0                            @kubernetes  103 M
+ kubectl         x86_64  1.10.0-0                            @kubernetes   38 M
+ kubelet         x86_64  1.10.0-0                            @kubernetes  100 M
+Entfernt für Abhängigkeiten:
+ kubernetes-cni  x86_64  0.6.0-0                             @kubernetes   31 M
+
+Transaktionsübersicht
+================================================================================
+Entfernen  4 Pakete (+1 Abhängiges Paket)
+
+Installationsgröße: 328 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Löschen          : kubeadm-1.10.0-0.x86_64                                1/5 
+  Löschen          : kubelet-1.10.0-0.x86_64                                2/5 
+  Löschen          : kubernetes-cni-0.6.0-0.x86_64                          3/5 
+  Löschen          : kubectl-1.10.0-0.x86_64                                4/5 
+  Löschen          : 2:docker-1.13.1-53.git774336d.el7.centos.x86_64        5/5 
+Warnung: /etc/sysconfig/docker-storage als /etc/sysconfig/docker-storage.rpmsave gesichert
+  Überprüfung läuft: kubeadm-1.10.0-0.x86_64                                1/5 
+  Überprüfung läuft: 2:docker-1.13.1-53.git774336d.el7.centos.x86_64        2/5 
+  Überprüfung läuft: kubernetes-cni-0.6.0-0.x86_64                          3/5 
+  Überprüfung läuft: kubectl-1.10.0-0.x86_64                                4/5 
+  Überprüfung läuft: kubelet-1.10.0-0.x86_64                                5/5 
+
+Entfernt:
+  docker.x86_64 2:1.13.1-53.git774336d.el7.centos   kubeadm.x86_64 0:1.10.0-0  
+  kubectl.x86_64 0:1.10.0-0                         kubelet.x86_64 0:1.10.0-0  
+
+Abhängigkeit entfernt:
+  kubernetes-cni.x86_64 0:0.6.0-0                                               
+
+Komplett!
+node node0 completly cleaned.
