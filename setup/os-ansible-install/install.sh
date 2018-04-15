@@ -8,5 +8,10 @@ echo - OpenShift Ansible Branch ---------------------
 
 ( cd ../../../openshift-ansible; git describe )
 
-ansible-playbook -e openshift_disable_check=docker_storage,package_version \
-                 -i ./inventory ../../../openshift-ansible/playbooks/byo/config.yml --flush-cache
+#ansible-playbook  \
+#                 -i ./inventory ../../../openshift-ansible/playbooks/prerequisites.yml
+
+ansible-playbook -e openshift_repos_enable_testing=True \
+                 -e openshift_deployment_type=origin -e containerized=true \
+                 -e openshift_disable_check=docker_storage \
+                 -i ./inventory ../../../openshift-ansible/playbooks/deploy_cluster.yml
