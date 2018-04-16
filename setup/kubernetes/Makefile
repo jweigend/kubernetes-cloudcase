@@ -33,3 +33,5 @@ install-master :
 reboot :
 	./sbin/reboot-cluster.sh
 
+shutdown :
+	./sbin/shutdown-cluster.sh
