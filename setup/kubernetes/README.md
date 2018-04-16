@@ -1,5 +1,6 @@
-* Cloudcase K8s Installation *
+# Cloudcase K8s Installation
 
+## Makefile
 - make clean : cleanup everything
 
 - make prepare : installs docker, kubeadm 
