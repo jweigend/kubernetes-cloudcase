@@ -1,24 +1,27 @@
 help:
+	clear
 	@echo "--------------------------------------------------------------------------------------------------------"
-	@echo "***         Cloudkoffer setup script for setup a bare metal k8s cluster with kubeadm                 ***"  
+	@echo " Cloudkoffer setup script for setup a bare metal k8s cluster with kubeadm                               "
 	@echo "--------------------------------------------------------------------------------------------------------"
 	@echo " usage: make <target>"
 	@echo " valid targets are:"
 	@echo "                   "
 	@echo " Install Tasks     "
 	@echo " =============     "
-	@echo " - check           - tests if all nodes in the conf/cluster-nodes configuration file can be accessed."
-	@echo " - prepare         - installs docker, kubectl, kubeadm on all nodes listed in the cluster-nodes file." 
-	@echo " - prepare-node    - installs docker kubectl, kubeadm and do basic configuration."
-	@echo " - install-master  - install the master node."
+	@echo " - prepare         - installs docker, kubectl, kubeadm on all nodes listed in the cluster-nodes file."
+	@echo " - prepare-node    - installs docker kubectl, kubeadm and do basic configuration. Single node/master."
+	@echo " - install-master  - install the master node by using cubeadm init"
+	@echo " - join-nodes      - join all nodes after the master is ready."
+	@echo " - install-network - installs the network plugin. Make sure the install-master settings are consistent."
 	@echo " - clean           - cleans complete cluster and removes all docker, kubernetes and kubeadm components."
+	@echo " - install         - prepare, install-master, install-network"
 	@echo "                   "
 	@echo " Showcase Tasks    "
 	@echo " ==============    "	
-	@echo " - tbd 1           - Monitoring showcase with Prometheus and Grafana“
-	@echo " - tbd 2           - Logging showcase with Elastic Search and Kibana“
-	@echo " - tbd 3           - Tracing showcase with Jaeger„
-	@echo " - tbd 4           - Monitoring showcase with Software-EKG and Chronix“
+	@echo " - tbd 1           - Monitoring showcase with Prometheus and Grafana"
+	@echo " - tbd 2           - Logging showcase with Elastic Search and Kibana"
+	@echo " - tbd 3           - Tracing showcase with Jaeger"
+	@echo " - tbd 4           - Monitoring showcase with Software-EKG and Chronix"
 	@echo "                   "
 	@echo " Admin Tasks       "
 	@echo " ===========       "
@@ -26,6 +29,7 @@ help:
 	@echo " - shutown         - halt all nodes"
 	@echo " - check           - tests if all nodes in the conf/cluster-nodes configuration file can be accessed."
 	@echo "--------------------------------------------------------------------------------------------------------"
+
 check :
 	./sbin/check-cluster.sh
 
@@ -43,8 +47,16 @@ prepare-node :
 prepare :
 	./bin/prepare-cluster.sh
 
+install : prepare install-master join-nodes install-network
+
 install-master : 
 	./bin/install-master.sh
+
+join-nodes :
+	./bin/join-nodes.sh
+
+install-network :
+	./bin/install-network.sh
 
 reboot :
 	./sbin/reboot-cluster.sh
