@@ -26,17 +26,4 @@ OS Installation (CentOS 7 Full Software with UI ==> Workstation)
 
 It is important that DNS is fully functional.
 
-We use the OpenShift Ansible advanced installation method which is documented here:
-https://docs.openshift.org/latest/install_config/install/advanced_install.html
-
-
-## OpenShift Origin 3.7 - Preperations
-#### Install neccessary Software Packages
-```
-# yum install wget git net-tools bind-utils iptables-services bridge-utils \
-              bash-completion kexec-tools sos psacct
-# yum update
-# systemctl reboot
-```
-
 
