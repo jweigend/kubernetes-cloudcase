@@ -8,13 +8,14 @@ help:
 	@echo "                   "
 	@echo " Install Tasks     "
 	@echo " =============     "
-	@echo " - prepare         - installs docker, kubectl, kubeadm on all nodes listed in the cluster-nodes file."
-	@echo " - prepare-node    - installs docker kubectl, kubeadm and do basic configuration. Single node/master."
-	@echo " - install-master  - install the master node by using cubeadm init"
-	@echo " - join-nodes      - join all nodes after the master is ready."
-	@echo " - install-network - installs the network plugin. Make sure the install-master settings are consistent."
+	@echo " - prepare         - Installs docker, kubectl, kubeadm on all nodes listed in the cluster-nodes file."
+	@echo "                   - WARNING: Reboot required!"
+	@echo " - install-master  - Install the master node by using cubeadm init."
+	@echo "                   " Installation token is stored in the ./log/kubeadm-init.log file."
+	@echo " - join-nodes      - Join all nodes after the master is ready."
+	@echo " - install-network - Installs a network plugin."
+	@echo "                   - WARNING: Make sure install-master settings are consistent and some nodes are joined."
 	@echo " - clean           - cleans complete cluster and removes all docker, kubernetes and kubeadm components."
-	@echo " - install         - prepare, install-master, install-network"
 	@echo "                   "
 	@echo " Showcase Tasks    "
 	@echo " ==============    "	
@@ -46,6 +47,7 @@ prepare-node :
 
 prepare :
 	./bin/prepare-cluster.sh
+	./sbin/reboot-cluster.sh
 
 install : prepare install-master join-nodes install-network
 

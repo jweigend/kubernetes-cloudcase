@@ -1,77 +1,13 @@
-Geladene Plugins: fastestmirror, langpacks
-Loading mirror speeds from cached hostfile
- * base: mirror.ratiokontakt.de
- * extras: centos.copahost.com
- * updates: mirror.cuegee.de
-No packages marked for update
-Geladene Plugins: fastestmirror, langpacks
-Loading mirror speeds from cached hostfile
- * base: mirror.netcologne.de
- * extras: mirror.netcologne.de
- * updates: mirror.netcologne.de
-Abhängigkeiten werden aufgelöst
---> Transaktionsprüfung wird ausgeführt
----> Paket docker.x86_64 2:1.13.1-53.git774336d.el7.centos markiert, um installiert zu werden
---> Abhängigkeitsauflösung beendet
+[preflight] Running pre-flight checks.
+[discovery] Trying to connect to API Server "192.168.1.100:6443"
+[discovery] Created cluster-info discovery client, requesting info from "https://192.168.1.100:6443"
+[discovery] Requesting info from "https://192.168.1.100:6443" again to validate TLS against the pinned public key
+[discovery] Cluster info signature and contents are valid and TLS certificate validates against pinned roots, will use API Server "192.168.1.100:6443"
+[discovery] Successfully established connection with API Server "192.168.1.100:6443"
 
-Abhängigkeiten aufgelöst
+This node has joined the cluster:
+* Certificate signing request was sent to master and a response
+  was received.
+* The Kubelet was informed of the new secure connection details.
 
-================================================================================
- Package    Arch       Version                                 Paketquelle
-                                                                          Größe
-================================================================================
-Installieren:
- docker     x86_64     2:1.13.1-53.git774336d.el7.centos       extras      16 M
-
-Transaktionsübersicht
-================================================================================
-Installieren  1 Paket
-
-Gesamte Downloadgröße: 16 M
-Installationsgröße: 56 M
-Downloading packages:
-Running transaction check
-Running transaction test
-Transaction test succeeded
-Running transaction
-  Installieren     : 2:docker-1.13.1-53.git774336d.el7.centos.x86_64        1/1 
-  Überprüfung läuft: 2:docker-1.13.1-53.git774336d.el7.centos.x86_64        1/1 
-
-Installiert:
-  docker.x86_64 2:1.13.1-53.git774336d.el7.centos                               
-
-Komplett!
-Geladene Plugins: fastestmirror, langpacks
-Loading mirror speeds from cached hostfile
- * base: mirror.ratiokontakt.de
- * extras: centos.copahost.com
- * updates: mirror.ratiokontakt.de
-Abhängigkeiten werden aufgelöst
---> Transaktionsprüfung wird ausgeführt
----> Paket kubeadm.x86_64 0:1.10.0-0 markiert, um installiert zu werden
---> Abhängigkeit kubernetes-cni wird für Paket kubeadm-1.10.0-0.x86_64 verarbeitet
----> Paket kubectl.x86_64 0:1.10.0-0 markiert, um installiert zu werden
----> Paket kubelet.x86_64 0:1.10.0-0 markiert, um installiert zu werden
---> Transaktionsprüfung wird ausgeführt
----> Paket kubernetes-cni.x86_64 0:0.6.0-0 markiert, um installiert zu werden
---> Abhängigkeitsauflösung beendet
-
-Abhängigkeiten aufgelöst
-
-================================================================================
- Package               Arch          Version            Paketquelle       Größe
-================================================================================
-Installieren:
- kubeadm               x86_64        1.10.0-0           kubernetes         17 M
- kubectl               x86_64        1.10.0-0           kubernetes        7.6 M
- kubelet               x86_64        1.10.0-0           kubernetes         17 M
-Als Abhängigkeiten installiert:
- kubernetes-cni        x86_64        0.6.0-0            kubernetes        8.6 M
-
-Transaktionsübersicht
-================================================================================
-Installieren  3 Pakete (+1 Abhängiges Paket)
-
-Gesamte Downloadgröße: 50 M
-Installationsgröße: 272 M
-Downloading packages:
+Run 'kubectl get nodes' on the master to see this node join the cluster.
