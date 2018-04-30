@@ -6,6 +6,16 @@ LXC is not a part of the official CentOS distribution. If you try to install LXC
 
 https://discuss.linuxcontainers.org/t/lxd-on-centos-7/1250
 
+```shell
+## Create five nodes for k8s setup ...
+
+lxc launch images:centos/7/amd64 node0
+lxc launch images:centos/7/amd64 node1
+lxc launch images:centos/7/amd64 node2
+lxc launch images:centos/7/amd64 node3
+lxc launch images:centos/7/amd64 node4
+
+
  lxc list
 +-------+---------+---------------------+-----------------------------------------------+------------+-----------+
 | NAME  |  STATE  |        IPV4         |                     IPV6                      |    TYPE    | SNAPSHOTS |
@@ -20,3 +30,5 @@ https://discuss.linuxcontainers.org/t/lxd-on-centos-7/1250
 +-------+---------+---------------------+-----------------------------------------------+------------+-----------+
 | node4 | RUNNING | 10.65.34.47 (eth0)  | fd42:a87e:5024:5ace:216:3eff:fe67:bb6f (eth0) | PERSISTENT | 0         |
 +-------+---------+---------------------+-----------------------------------------------+------------+-----------+
+```
+
