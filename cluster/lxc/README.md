@@ -6,14 +6,23 @@ LXC is not a part of the official CentOS distribution. If you try to install LXC
 
 https://discuss.linuxcontainers.org/t/lxd-on-centos-7/1250
 
-```shell
-## Create five nodes for k8s setup ...
+Make sure you have read the comment at the end otherwise the required kernel parameters for LXC/LXD do not match.
 
-lxc launch images:centos/7/amd64 node0
-lxc launch images:centos/7/amd64 node1
-lxc launch images:centos/7/amd64 node2
-lxc launch images:centos/7/amd64 node3
-lxc launch images:centos/7/amd64 node4
+After installation you can download and start a CentOS 7 Linux Container with the following command:
+
+```shell
+lxc launch images:centos/7/amd64 node$i -c security.nesting=true -c security.privileged=true;
+```shell
+
+
+```shell
+## Create nodes for k8s setup ...
+NUMBER_OF_NODES=5
+for i in $(seq 0 $NUMBER_OF_NODES); do 
+   echo Creating Container VM for $i
+   lxc launch images:centos/7/amd64 node$i -c security.nesting=true -c security.privileged=true;
+done
+
 
 
  lxc list
