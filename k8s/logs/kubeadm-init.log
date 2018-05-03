@@ -1,0 +1,14 @@
+[init] Using Kubernetes version: v1.10.2
+[init] Using Authorization modes: [Node RBAC]
+[preflight] Running pre-flight checks.
+[preflight] The system verification failed. Printing the output from the verification:
+[0;37mKERNEL_VERSION[0m: [0;32m4.15.0-20-generic[0m
+[0;37mDOCKER_VERSION[0m: [0;32m1.13.1[0m
+[0;37mDOCKER_GRAPH_DRIVER[0m: [0;31mbtrfs[0m
+[0;37mOS[0m: [0;32mLinux[0m
+[0;37mCGROUPS_CPU[0m: [0;32menabled[0m
+[0;37mCGROUPS_CPUACCT[0m: [0;32menabled[0m
+[0;37mCGROUPS_CPUSET[0m: [0;32menabled[0m
+[0;37mCGROUPS_DEVICES[0m: [0;32menabled[0m
+[0;37mCGROUPS_FREEZER[0m: [0;32menabled[0m
+[0;37mCGROUPS_MEMORY[0m: [0;32menabled[0m

@@ -1,0 +1,59 @@
+[preflight] Running pre-flight checks.
+[reset] Stopping the kubelet service.
+[reset] Unmounting mounted directories in "/var/lib/kubelet"
+[reset] Removing kubernetes-managed containers.
+[reset] Docker doesn't seem to be running. Skipping the removal of running Kubernetes containers.
+[reset] No etcd manifest found in "/etc/kubernetes/manifests/etcd.yaml". Assuming external etcd.
+[reset] Deleting contents of stateful directories: [/var/lib/kubelet /etc/cni/net.d /var/lib/dockershim /var/run/kubernetes]
+[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
+[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+Loaded plugins: fastestmirror
+Resolving Dependencies
+--> Running transaction check
+---> Package kubeadm.x86_64 0:1.10.2-0 will be erased
+---> Package kubectl.x86_64 0:1.10.2-0 will be erased
+---> Package kubelet.x86_64 0:1.10.2-0 will be erased
+--> Processing Dependency: kubelet for package: kubernetes-cni-0.6.0-0.x86_64
+--> Running transaction check
+---> Package kubernetes-cni.x86_64 0:0.6.0-0 will be erased
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package               Arch          Version           Repository          Size
+================================================================================
+Removing:
+ kubeadm               x86_64        1.10.2-0          @kubernetes        103 M
+ kubectl               x86_64        1.10.2-0          @kubernetes         38 M
+ kubelet               x86_64        1.10.2-0          @kubernetes        100 M
+Removing for dependencies:
+ kubernetes-cni        x86_64        0.6.0-0           @kubernetes         31 M
+
+Transaction Summary
+================================================================================
+Remove  3 Packages (+1 Dependent package)
+
+Installed size: 272 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Erasing    : kubeadm-1.10.2-0.x86_64                                      1/4 
+  Erasing    : kubelet-1.10.2-0.x86_64                                      2/4 
+  Erasing    : kubernetes-cni-0.6.0-0.x86_64                                3/4 
+  Erasing    : kubectl-1.10.2-0.x86_64                                      4/4 
+  Verifying  : kubeadm-1.10.2-0.x86_64                                      1/4 
+  Verifying  : kubernetes-cni-0.6.0-0.x86_64                                2/4 
+  Verifying  : kubelet-1.10.2-0.x86_64                                      3/4 
+  Verifying  : kubectl-1.10.2-0.x86_64                                      4/4 
+
+Removed:
+  kubeadm.x86_64 0:1.10.2-0 kubectl.x86_64 0:1.10.2-0 kubelet.x86_64 0:1.10.2-0
+
+Dependency Removed:
+  kubernetes-cni.x86_64 0:0.6.0-0                                               
+
+Complete!
+node node2 completly cleaned.
