@@ -9,12 +9,10 @@ for i in $(seq 0 `expr $NODES - 1`); do
    lxc exec node$i -- /bin/bash -c "echo root:12qwasyx | chpasswd"
 done
 
-echo copy keys
+echo create and copy ssh keys on node0
+
 lxc exec node0 -- /bin/bash -c "ssh-keygen"
-
-yum -y install git
-
-git clone https://github.com/jweigend/kubernetes-cloudcase
-
-./kubernetes-cloudcase/util/copy-ssh-keys.sh
+lxc exec node0 -- /bin/bash -c "yum -y install git"
+lxc exec node0 -- /bin/bash -c "git clone https://github.com/jweigend/kubernetes-cloudcase"
+lxc exec node0 -- /bin/bash -c "./kubernetes-cloudcase/lxc/bin/copy-ssh-keys.sh"
 
