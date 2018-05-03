@@ -1,7 +1,8 @@
 # Kubernetes Cloudcase
-## Automated K8s Setup with kubeadm for CentOS7 Bare Metal Nodes, KVM VMs or LXC Containers  
+#### Automated K8s Setup with kubeadm for CentOS 7
 
-At QAware we built a device called "Cloudcase" consisting of five Intel Nuc PCs. All PCs are packed inside a business briefcase including a small GB Switch and a Mini Router. We use this device for the demonstration of all kinds of Cloud Native Software. Real Hardware make it easy to test scalability of Software like Elastic Search or Apache Spark.
+
+At QAware we built a device called "Cloudcase" which consists of five Intel Nuc PCs. All PCs are packed inside a business briefcase including a small GB Switch and a Mini Router. We use this device for the demonstration of all kinds of Cloud Native Software. Real Hardware make it easy to test scalability of Software like Elastic Search or Apache Spark.
 
 This project contains scripts to setup a Bare Metal-, KVM- or LXC-Cluster. 
 
