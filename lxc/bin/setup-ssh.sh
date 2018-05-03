@@ -14,7 +14,6 @@ lxc exec node0 -- /bin/bash -c "ssh-keygen"
 
 yum -y install git
 
-git clone https://github.com/jweigend/kubernetes-cloudcase
-
-./kubernetes-cloudcase/util/copy-ssh-keys.sh
+lxc exec node0 -- /bin/bash -c "git clone https://github.com/jweigend/kubernetes-cloudcase"
+lxc exec node0 -- /bin/bash -c "./kubernetes-cloudcase/util/copy-ssh-keys.sh"
 
