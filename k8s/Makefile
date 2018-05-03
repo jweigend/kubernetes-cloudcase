@@ -1,35 +1,8 @@
-help:
-	clear
-	@echo "--------------------------------------------------------------------------------------------------------"
-	@echo " Cloudkoffer setup script for setup a bare metal k8s cluster with kubeadm                               "
-	@echo "--------------------------------------------------------------------------------------------------------"
-	@echo " usage: make <target>"
-	@echo " valid targets are:"
-	@echo "                   "
-	@echo " Install Tasks     "
-	@echo " =============     "
-	@echo " - prepare         - Installs docker, kubectl, kubeadm on all nodes listed in the cluster-nodes file."
-	@echo "                     WARNING: Reboot required!"
-	@echo " - install-master  - Install the master node by using cubeadm init."
-	@echo "                     Installation token is stored in the ./log/kubeadm-init.log file."
-	@echo " - join-nodes      - Join all nodes after the master is ready."
-	@echo " - install-network - Installs a network plugin."
-	@echo "                     WARNING: Make sure install-master settings are consistent and some nodes are joined."
-	@echo " - clean           - cleans complete cluster and removes all docker, kubernetes and kubeadm components."
-	@echo "                   "
-	@echo " Showcase Tasks    "
-	@echo " ==============    "	
-	@echo " - tbd 1           - Monitoring showcase with Prometheus and Grafana"
-	@echo " - tbd 2           - Logging showcase with Elastic Search and Kibana"
-	@echo " - tbd 3           - Tracing showcase with Jaeger"
-	@echo " - tbd 4           - Monitoring showcase with Software-EKG and Chronix"
-	@echo "                   "
-	@echo " Admin Tasks       "
-	@echo " ===========       "
-	@echo " - reboot          - reboot all nodes"
-	@echo " - shutown         - halt all nodes"
-	@echo " - check           - tests if all nodes in the conf/cluster-nodes configuration file can be accessed."
-	@echo "--------------------------------------------------------------------------------------------------------"
+#
+# Setup Umbrella Makefile for K8s installation
+#
+
+default : help
 
 check :
 	./sbin/check-cluster.sh
@@ -65,3 +38,29 @@ reboot :
 
 shutdown :
 	./sbin/shutdown-cluster.sh
+
+help:
+	clear
+	@echo "--------------------------------------------------------------------------------------------------------"
+	@echo " Cloudkoffer setup script for Kubernetes installation on CentOS 7 nodes.                                "
+	@echo "--------------------------------------------------------------------------------------------------------"
+	@echo " usage: make <target>"
+	@echo "--------------------------------------------------------------------------------------------------------"
+    @echo "                               "
+	@echo " valid targets are:            "
+	@echo "                               "
+	@echo " Install Tasks        "
+	@echo "  - prepare             - Install docker, kubectl, kubeadm on all nodes listed in the cluster-nodes file."
+	@echo "                          WARNING: Reboot required!"
+	@echo "  - install-master      - Install the k8s master node by using cubeadm init."
+	@echo "                          Installation token is stored in the ./log/kubeadm-init.log file."
+	@echo "  - join-nodes          - Join all nodes after the master is ready."
+	@echo "  - install-network     - Installs a network plugin."
+	@echo "                          WARNING: Make sure install-master settings are consistent and some nodes are joined."
+	@echo "  - clean              - cleans complete cluster and removes all docker, kubernetes and kubeadm components."
+	@echo "                      "
+	@echo " Admin Tasks         "
+	@echo "  - reboot              - reboot all nodes"
+	@echo "  - shutown             - halt all nodes"
+	@echo "  - check               - tests if all nodes in the conf/cluster-nodes configuration file can be accessed."
+	@echo "--------------------------------------------------------------------------------------------------------"
