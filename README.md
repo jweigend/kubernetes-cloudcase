@@ -1,6 +1,5 @@
 # UPDATE 2026
-#### This Repository is Deprecated. There are much better tools than .sh to update your cloud infrastructure !
-
+#### This Repository is deprecated. Please look at jweigend/cloudcase-2026 instead
 
 # Kubernetes Cloudcase
 #### Automated K8s Setup with kubeadm for CentOS 7
